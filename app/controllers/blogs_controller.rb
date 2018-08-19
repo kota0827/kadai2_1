@@ -45,9 +45,11 @@ before_action :set_blog, only: [:show, :edit, :update, :destroy]
   
   def confirm
     @blog = Blog.new(blog_params)
+    render :new if @blog.invalid?
   end
   
   private
+  
     def blog_params
       params.require(:blog).permit(:title, :content)
     end
