@@ -49,7 +49,6 @@ before_action :set_blog, only: [:show, :edit, :update, :destroy]
   end
   
   private
-  
   def blog_params
     params.require(:blog).permit(:title, :content)
   end
